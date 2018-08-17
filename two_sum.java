@@ -21,6 +21,7 @@ package LeetCode;
 import java.util.*;
 
 public class two_sum {
+    //最优解法:空间复杂度为O(N),时间复杂度为O(N)
     public int[] twoSum(int[] numbers, int target) {
         int[] res = new int[2];
         HashMap<Integer, Integer> hashMap = new HashMap<>();//key:元素,value:下标
@@ -38,6 +39,34 @@ public class two_sum {
         }
         return res;
     }
+    //自己写的方法，需要排序，空间复杂度为O(N),时间复杂度为O(NlogN)
+    public int[] twoSum2(int[] numbers, int target) {
+        int[] numbers2 = Arrays.copyOf(numbers, numbers.length);
+        Arrays.sort(numbers2);
+        int a = 0;
+        int b = numbers2.length - 1;
+        int[] res = new int[2];
+        while (a < b) {
+            if (numbers2[a] + numbers2[b] < target) {
+                a++;
+            } else if (numbers2[a] + numbers2[b] > target) {
+                b--;
+            } else {
+                int cnt = -1;
+                for (int i = 0; i < numbers.length; i++) {
+                    if (numbers[i] == numbers2[a] || numbers[i] == numbers2[b]) {
+                        res[++cnt] = i+1;
+                        if (cnt == 1)
+                            break;
+                    }
+
+                }
+                break;
+            }
+        }
+        return res;
+    }
+}
 
     public static void main(String[] args) {
         two_sum it = new two_sum();
