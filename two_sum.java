@@ -1,4 +1,6 @@
 package LeetCode;
+//题目所在地址:
+// https://www.nowcoder.com/practice/20ef0972485e41019e39543e8e895b7f?tpId=46&tqId=29177&tPage=1&rp=1&ru=/ta/leetcode&qru=/ta/leetcode/question-ranking
 //给定一个无序数组，数组中的元素可能存在重复值
 //给定一个target，要求找到两个数的和为target，并返回这两个数的下标(下标小的在前面)
 //思路：我一开始的思路是将数组排成有序，并另外开拓一个空间保存原数组，然后从有序的数组中找两个数的
