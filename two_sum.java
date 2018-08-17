@@ -34,8 +34,6 @@ public class two_sum {
                 res[1] = i + 1;
                 break;
             }
-
-
         }
         return res;
     }
@@ -66,13 +64,12 @@ public class two_sum {
         }
         return res;
     }
-}
 
     public static void main(String[] args) {
         two_sum it = new two_sum();
         int[] numbers = {0, 0, 4, 0};
 
-        int[] res = it.twoSum(numbers, 4);
+        int[] res = it.twoSum2(numbers, 4);
         for (int i = 0; i < res.length; i++) {
             System.out.print(res[i] + " ");
         }
