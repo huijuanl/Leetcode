@@ -21,9 +21,11 @@ public class isBalancedTree {
             return true;
         int[]leftLength =new int[1];
         boolean leftIsBalanced = isBalancedTree(root.left,leftLength);
+        if(!leftIsBalanced)
+            return false;
         int[]rightLength =new int[1];
         boolean rightIsBalanced = isBalancedTree(root.right,rightLength);
-        if(!leftIsBalanced||!rightIsBalanced)
+        if(!rightIsBalanced)
             return false;
         if(Math.abs(rightLength[0]-leftLength[0])>1)
             return false;
